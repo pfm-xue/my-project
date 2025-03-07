@@ -77,12 +77,22 @@
           </div>
         </div>
   
-        <button type="submit" class="submit-btn">立即注册</button>
+        <button type="submit" class="submit-btn">
+        立即注册
+      </button>
+
+      <!-- 反馈消息 -->
+      <div v-if="message" :class="['message', message.type]">
+        {{ message.text }}
+      </div>
+
       </form>
     </div>
   </template>
   
   <script>
+import axios from 'axios';
+
   export default {
     name: 'CreatePage',
     data() {
@@ -103,6 +113,7 @@
       }
     },
     computed: {
+
       // 密码复杂度验证
       hasLowerCase() {
         return /[a-z]/.test(this.form.password)
@@ -176,14 +187,28 @@
         return Object.values(this.errorMessages).every(msg => msg === '')
       },
   
-      handleRegister() {
-        if (this.validateForm()) {
-          // 这里可以调用注册API
-          console.log('注册信息：', this.form)
-          // 示例：跳转到登录页面
-          // this.$router.push('/login')
-        }
+    // 提交注册
+    async handleRegister() {
+
+      this.loading = true;
+      this.message = null;
+
+      try {
+        await axios.post('http://localhost:5000/api/auth/register', {
+          username: this.form.username,
+          password: this.form.password
+        });
+
+        window.location.href = '/nav.html';
+
+      } catch (error) {
+        const errorMessage = error.response?.data?.error || '注册失败，请稍后重试';
+        this.showMessage('error', errorMessage);
+      } finally {
+        this.loading = false;
       }
+    },
+
     }
   }
   </script>
