@@ -6,6 +6,8 @@ import { createRouter, createWebHistory } from 'vue-router';
 import navPage from '@/pages/nav/navPage.vue';
 import Welcome from '@/views/Welcome.vue';
 import About from '@/views/About.vue';
+import Contact from '@/views/Contact.vue'; 
+import Services from '@/views/Services.vue';
 
 // 定义路由
 const routes = [
@@ -23,8 +25,17 @@ const routes = [
     path: '/About',
     name: 'About',
     component: About
+  },
+  {
+    path: '/Contact',
+    name: 'Contact',
+    component: Contact
+  },
+  {
+    path: '/Services',
+    name: 'Services',
+    component: Services
   }
-  
 ];
 
 // 创建路由实例

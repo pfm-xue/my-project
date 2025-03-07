@@ -1,5 +1,5 @@
 <template>
-  <!-- Home.vue -->
+  <!-- navPage.vue -->
   <div class="home-container">
     <!-- 右侧导航栏 -->
     <nav class="right-nav">
@@ -28,6 +28,8 @@ export default {
     return {
       navItems: [
         { title: '首页', path: '/Welcome' },
+        { title: '服务', path: '/Services' },
+        { title: '联系', path: '/Contact' },
         { title: '关于', path: '/About' },
       ]
     }

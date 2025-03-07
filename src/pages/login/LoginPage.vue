@@ -39,6 +39,8 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   name: 'LoginPage',
   data() {
@@ -51,19 +53,29 @@ export default {
     }
   },
   methods: {
-    handleLogin() {
+    async handleLogin() { 
+      try {
       // 简单的表单验证
       if (!this.form.username || !this.form.password) {
         this.errorMessage = '账号和密码不能为空'
         return
       }
+        this.loading = true;
+        this.errorMessage = '';
 
-      // 这里可以添加实际的登录逻辑
-      // console.log('登录信息：', this.form)
-      // this.errorMessage = ''
-      
-      //this.$router.push('/HelloWorld')
-      window.location.href = '/nav.html';
+        const response = await axios.post('http://localhost:5000/api/auth/login', this.form);
+
+        // 存储用户信息（示例使用 localStorage）
+        localStorage.setItem('user', JSON.stringify(response.data.user));
+        
+        // 跳转到主页
+        window.location.href = '/nav.html';
+
+      } catch (error) {
+        this.errorMessage = error.response?.data?.error || '登录失败';
+      } finally {
+        this.loading = false;
+      }
     },
     handleRegister() {
       // 跳转到注册页面
