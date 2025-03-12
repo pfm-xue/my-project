@@ -1,5 +1,5 @@
 import express from 'express';
-import { register, login } from '../controllers/auth.js';
+import { register, login, getUsers } from '../controllers/auth.js';
 
 const router = express.Router();
 
@@ -8,5 +8,9 @@ router.post('/register', register);
 
 // POST /api/auth/login
 router.post('/login', login);
+
+// GET /api/auth/users
+// 需要认证 
+router.get('/users', authenticate, getUsers);
 
 export default router;

@@ -2,7 +2,7 @@
   <div class="welcome-page">
     <h1>欢迎来到系统</h1>
     <p>请使用左侧导航栏访问功能</p>
-    
+
     <button class="logout-btn" @click="showModal = true">
       退出登录
     </button>
@@ -35,11 +35,6 @@ export default {
       this.performLogout();
     },
     performLogout() {
-      // 清除用户状态
-      //localStorage.removeItem('authToken');
-      //sessionStorage.removeItem('userData');
-      //this.$store.commit('CLEAR_USER');
-
       // 跳转登录页
       window.location.href = '/login.html';
     }

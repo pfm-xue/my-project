@@ -31,6 +31,7 @@ export default {
         { title: '服务', path: '/Services' },
         { title: '联系', path: '/Contact' },
         { title: '关于', path: '/About' },
+        { title: '用户列表', path: '/UserList' },
       ]
     }
   }

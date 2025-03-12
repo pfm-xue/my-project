@@ -8,6 +8,7 @@ import Welcome from '@/views/Welcome.vue';
 import About from '@/views/About.vue';
 import Contact from '@/views/Contact.vue'; 
 import Services from '@/views/Services.vue';
+import UserList from '@/views/UserList.vue';
 
 // 定义路由
 const routes = [
@@ -34,7 +35,12 @@ const routes = [
   {
     path: '/Services',
     name: 'Services',
-    component: Services
+    component: Services 
+  },
+  {
+    path: '/UserList',
+    name: 'UserList',
+    component: UserList
   }
 ];
 

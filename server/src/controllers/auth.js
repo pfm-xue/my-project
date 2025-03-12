@@ -69,3 +69,42 @@ export const login = async (req, res) => {
     res.status(500).json({ error: '服务器错误' });
   }
 };
+
+export const getUsers = async (req, res) => {
+  try {
+    // 分页参数（示例使用固定值，可按需扩展）
+    const page = parseInt(req.query.page) || 1;
+    const limit = 10;
+    const offset = (page - 1) * limit;
+
+    // 查询用户列表
+    const [users] = await pool.query(`
+      SELECT 
+        id, 
+        username, 
+        created_at 
+      FROM users 
+      ORDER BY created_at DESC 
+      LIMIT ? OFFSET ?
+    `, [limit, offset]);
+
+    // 获取总数
+    const [total] = await pool.query('SELECT COUNT(*) AS count FROM users');s
+
+    res.json({
+      data: users.map(user => ({
+        ...user,
+        created_at: new Date(user.created_at).toISOString()
+      })),
+      pagination: {
+        total: total[0].count,
+        page,
+        totalPages: Math.ceil(total[0].count / limit)
+      }
+    });
+
+  } catch (error) {
+    console.error('获取用户列表错误:', error);
+    res.status(500).json({ error: '获取用户列表失败' });
+  }
+};

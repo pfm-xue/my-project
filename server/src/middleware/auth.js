@@ -15,3 +15,14 @@ export const authenticate = (req, res, next) => {
     res.status(401).json({ error: '无效的认证令牌' });
   }
 };
+
+// middleware/auth.js
+export const authorizeAdmin = (req, res, next) => {
+  if (!req.user.isAdmin) {
+    return res.status(403).json({ error: '无权访问此资源' });
+  }
+  next();
+};
+
+// 路由中使用
+router.get('/users', authenticate, authorizeAdmin, getUsers);
