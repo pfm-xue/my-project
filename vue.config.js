@@ -18,5 +18,9 @@ const generatePages = () => {
 
 module.exports = defineConfig({
   transpileDependencies: true,
-  pages: generatePages()
+  pages: generatePages(),
+  publicPath: './',          // 使用相对路径（适用于静态服务器）
+  outputDir: 'dist',         // 打包输出目录
+  assetsDir: 'static',       // 静态资源目录
+  productionSourceMap: false // 关闭 sourcemap
 })

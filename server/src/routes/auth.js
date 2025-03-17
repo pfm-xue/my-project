@@ -11,6 +11,6 @@ router.post('/login', login);
 
 // GET /api/auth/users
 // 需要认证 
-router.get('/users', authenticate, getUsers);
+router.get('/getUsers', getUsers);
 
 export default router;

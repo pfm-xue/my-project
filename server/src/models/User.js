@@ -24,6 +24,7 @@ class User {
     );
     return result.insertId;
   }
-}
+
+  }
 
 export default User;

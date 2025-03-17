@@ -27,11 +27,11 @@ export default {
   data() {
     return {
       navItems: [
-        { title: '首页', path: '/Welcome' },
-        { title: '服务', path: '/Services' },
-        { title: '联系', path: '/Contact' },
-        { title: '关于', path: '/About' },
+        { title: '首　　页', path: '/Welcome' },
         { title: '用户列表', path: '/UserList' },
+        { title: '服　　务', path: '/Services' },
+        { title: '联　　系', path: '/Contact' },
+        { title: '关　　于', path: '/About' },
       ]
     }
   }

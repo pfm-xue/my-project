@@ -1,6 +1,7 @@
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import User from '../models/User.js';
+import pool from '../config/db.js';
 
 export const register = async (req, res) => {
   try {
@@ -74,7 +75,7 @@ export const getUsers = async (req, res) => {
   try {
     // 分页参数（示例使用固定值，可按需扩展）
     const page = parseInt(req.query.page) || 1;
-    const limit = 10;
+    const limit = parseInt(req.query.limit) || 10;
     const offset = (page - 1) * limit;
 
     // 查询用户列表
@@ -89,7 +90,7 @@ export const getUsers = async (req, res) => {
     `, [limit, offset]);
 
     // 获取总数
-    const [total] = await pool.query('SELECT COUNT(*) AS count FROM users');s
+    const [total] = await pool.query('SELECT COUNT(*) AS count FROM users');
 
     res.json({
       data: users.map(user => ({

@@ -76,7 +76,7 @@ export default {
       errorMessage: '',
       pagination: {
         page: 1,
-        limit: 10,
+        limit: 2,
         total: 0,
         totalPages: 1
       }
@@ -94,7 +94,8 @@ export default {
 
         const response = await axios.get(`http://localhost:5000/api/auth/getUsers`, {
           params: {
-            page: this.pagination.page
+            page: this.pagination.page,
+            limit: this.pagination.limit
           }
         });
 
@@ -128,7 +129,7 @@ export default {
 
     // 格式化日期
     formatDate(dateString) {
-      return dayjs(dateString).format('YYYY-MM-DD HH:mm:ss');
+      return dayjs(dateString).format('YYYY/MM/DD');
     }
   }
 };
