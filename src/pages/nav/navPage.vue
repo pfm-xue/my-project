@@ -53,19 +53,23 @@ export default {
     }
   },
   methods: {
+    
     confirmLogout() {
       this.showModal = false;
       this.performLogout();
     },
+
     performLogout() {
       // 跳转登录页
       window.location.href = '/login.html';
     },
+
     handleLogout() {
       if (confirm('确定要退出系统吗？')) {
             alert('退出成功，即将跳转到登录页');
+            this.showModal = false;
             window.location.href = '/login'; // 模拟页面跳转
-          }
+      }
     }
   }
 }
@@ -78,9 +82,9 @@ export default {
 }
 
 .right-nav {
-  width: 200px;
+  width: 100px;
   background: #f5f5f5;
-  padding: 20px;
+  padding: 40px 20px 20px 20px;
   box-shadow: 2px 0 5px rgba(0,0,0,0.1);
   display: flex;
   flex-direction: column;
@@ -117,8 +121,9 @@ export default {
 .header-nav {
   position: fixed;
   top: 0;
-  left: 250px;
+  left: 0;
   right: 0;
+  height: 20px;
   background: #fff;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   padding: 15px 30px;
