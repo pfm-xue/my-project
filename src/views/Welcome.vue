@@ -1,11 +1,9 @@
 <template>
   <div class="welcome-page">
     <h1>欢迎来到系统</h1>
-    <p>请使用左侧导航栏访问功能</p>
+    <!-- <p>请使用左侧导航栏访问功能</p> -->
 
-    <button class="logout-btn" @click="showModal = true">
-      退出登录
-    </button>
+    <!-- <button class="logout-btn" @click="showModal = true">退出登录</button> -->
 
     <!-- 自定义确认弹窗 -->
     <div v-if="showModal" class="modal-mask">
