@@ -6,7 +6,7 @@
         <div class="service-item">
           <h2>OpenAI</h2>
           <p>
-            OpenAI 提供强大的自然语言处理模型，如 GPT-3 和 GPT-4，适用于文本生成、翻译、问答等场景。
+            OpenAI 提供强大的自然语言处理模型,如 GPT-3 和 GPT-4,适用于文本生成、翻译、问答等场景。
           </p>
           <a href="https://openai.com" target="_blank" rel="noopener noreferrer">访问 OpenAI</a>
         </div>
@@ -15,7 +15,7 @@
         <div class="service-item">
           <h2>TensorFlow</h2>
           <p>
-            TensorFlow 是由 Google 开发的开源机器学习框架，支持深度学习模型的训练和部署。
+            TensorFlow 是由 Google 开发的开源机器学习框架,支持深度学习模型的训练和部署。
           </p>
           <a href="https://www.tensorflow.org" target="_blank" rel="noopener noreferrer">访问 TensorFlow</a>
         </div>
@@ -24,7 +24,7 @@
         <div class="service-item">
           <h2>Hugging Face</h2>
           <p>
-            Hugging Face 提供丰富的预训练模型和数据集，支持自然语言处理、计算机视觉等任务。
+            Hugging Face 提供丰富的预训练模型和数据集,支持自然语言处理、计算机视觉等任务。
           </p>
           <a href="https://huggingface.co" target="_blank" rel="noopener noreferrer">访问 Hugging Face</a>
         </div>
@@ -33,7 +33,7 @@
         <div class="service-item">
           <h2>IBM Watson</h2>
           <p>
-            IBM Watson 是一个企业级 AI 平台，提供语音识别、视觉识别、自然语言处理等服务。
+            IBM Watson 是一个企业级 AI 平台,提供语音识别、视觉识别、自然语言处理等服务。
           </p>
           <a href="https://www.ibm.com/watson" target="_blank" rel="noopener noreferrer">访问 IBM Watson</a>
         </div>
@@ -42,7 +42,7 @@
         <div class="service-item">
           <h2>Microsoft Azure AI</h2>
           <p>
-            Azure AI 是微软提供的云 AI 服务，涵盖机器学习、认知服务、机器人开发等功能。
+            Azure AI 是微软提供的云 AI 服务,涵盖机器学习、认知服务、机器人开发等功能。
           </p>
           <a href="https://azure.microsoft.com/ai" target="_blank" rel="noopener noreferrer">访问 Azure AI</a>
         </div>
